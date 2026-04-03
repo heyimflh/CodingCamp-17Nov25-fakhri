@@ -73,6 +73,7 @@ section {
     font-size: 3.6rem;
     color: var(--text-color);
     display: none;
+    cursor: pointer; /* Memperjelas bahwa icon ini bisa diklik */
 }
 
 .home {
@@ -430,17 +431,21 @@ span {
         background: var(--bg-color);
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
+        
+        /* Animasi smooth dropdown menggantikan display: none */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .4s ease-in-out;
     }
 
     .navbar.active {
-        display: block;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .navbar a {
         display: block;
-        margin: 3rem 0;
+        margin: 3rem auto;
         font-size: 2rem;
+        text-align: center; /* Menu di-center agar lebih rapi di HP */
     }
 
     .home {
