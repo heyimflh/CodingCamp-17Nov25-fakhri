@@ -45,7 +45,6 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', {origin: 'top'});
-// FIX: Mengubah .services-container menjadi .skills-container dan memastikan portofolio-box ter-target
 ScrollReveal().reveal('.home-img, .skills-container, .portofolio-box, .contact form', {origin: 'bottom'});
 ScrollReveal().reveal('.home-content h1, .about-img', {origin: 'left'});
 ScrollReveal().reveal('.home-content p, .about-content', {origin: 'right'});    

@@ -55,6 +55,7 @@ section {
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+    line-height: 1; /* Diperbaiki agar sejajar presisi dengan icon */
 }
 
 .navbar a {
@@ -70,10 +71,11 @@ section {
 }
 
 #menu-icon {
-    font-size: 3.6rem;
+    font-size: 3.2rem; /* Disesuaikan ukurannya agar lebih proporsional dengan logo */
     color: var(--text-color);
     display: none;
-    cursor: pointer; /* Memperjelas bahwa icon ini bisa diklik */
+    cursor: pointer;
+    line-height: 1; /* Diperbaiki agar sejajar presisi dengan text logo */
 }
 
 .home {
@@ -418,6 +420,10 @@ span {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 2rem 5%; /* Sedikit merenggangkan header di mobile */
+    }
+
     #menu-icon {
         display: block;
     }
@@ -432,7 +438,7 @@ span {
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         
-        /* Animasi smooth dropdown menggantikan display: none */
+        /* Animasi smooth dropdown */
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: .4s ease-in-out;
     }
@@ -445,7 +451,7 @@ span {
         display: block;
         margin: 3rem auto;
         font-size: 2rem;
-        text-align: center; /* Menu di-center agar lebih rapi di HP */
+        text-align: center;
     }
 
     .home {
