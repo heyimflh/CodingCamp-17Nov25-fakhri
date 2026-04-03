@@ -26,6 +26,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden; /* Mencegah layar tergeser/zoom-out horizontal */
 }
 
 section {
@@ -33,6 +34,7 @@ section {
     padding: 10rem 9% 2rem;
 }
 
+/* --- PERBAIKAN HEADER DISINI --- */
 .header {
     position: fixed;
     top: 0;
@@ -42,7 +44,7 @@ section {
     background: var(--bg-color);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Mengunci vertikal di tengah */
     z-index: 100;
 }
 
@@ -55,7 +57,9 @@ section {
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
-    line-height: 1; /* Diperbaiki agar sejajar presisi dengan icon */
+    display: inline-flex;
+    align-items: center;
+    line-height: 1; /* Menghilangkan tinggi bayangan font */
 }
 
 .navbar a {
@@ -71,12 +75,13 @@ section {
 }
 
 #menu-icon {
-    font-size: 3.2rem; /* Disesuaikan ukurannya agar lebih proporsional dengan logo */
+    font-size: 3.2rem; /* Ukuran proporsional */
     color: var(--text-color);
-    display: none;
+    display: none; /* Disembunyikan di desktop */
     cursor: pointer;
-    line-height: 1; /* Diperbaiki agar sejajar presisi dengan text logo */
+    line-height: 1;
 }
+/* --- BATAS PERBAIKAN HEADER --- */
 
 .home {
     display: flex;
@@ -117,6 +122,7 @@ span {
     font-size: 5.6rem;
     font-weight: 700;
     line-height: 1.3;
+    word-wrap: break-word; /* Mencegah teks kepanjangan di HP */
 }
 
 .home-content p {
@@ -419,13 +425,16 @@ span {
     }
 }
 
+/* --- PERBAIKAN KHUSUS HP --- */
 @media (max-width: 768px) {
     .header {
-        padding: 2rem 5%; /* Sedikit merenggangkan header di mobile */
+        padding: 1.5rem 5%; /* Menyesuaikan jarak header agar seimbang di kiri dan kanan */
     }
 
     #menu-icon {
-        display: block;
+        display: inline-flex; /* Mengubah ini agar icon sejajar penuh dengan teks logo */
+        align-items: center;
+        justify-content: center;
     }
 
     .navbar {
@@ -492,6 +501,7 @@ span {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/* --- BATAS PERBAIKAN KHUSUS HP --- */
 
 @media (max-width: 617px) {
     .portofolio-container {
@@ -506,6 +516,10 @@ span {
 
     .contact form .input-box input {
         width: 100%;
+    }
+    
+    .home-content h1 {
+        font-size: 4rem; /* Memperkecil H1 di layar sangat kecil agar tidak merusak layout */
     }
 }
 
